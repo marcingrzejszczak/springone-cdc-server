@@ -3,11 +3,9 @@ org.springframework.cloud.contract.spec.Contract.make {
 				method 'POST'
 				url '/check'
 				body(
-					[
-					name: value(consumer(regex('[a-zA-Z]+'))),
-					age: value(consumer(regex('([0-1][0-9]|20)')))
-					]
-				)
+						name: 'josh',
+						age: 17
+					)
 				headers {
 						header 'Content-Type', 'application/json'
 				}
@@ -21,7 +19,7 @@ org.springframework.cloud.contract.spec.Contract.make {
 				headers {
 						header('Content-Type', 
 							value(
-								consumer('application/json.*'),
+								consumer('application/json'),
 								producer(regex('application/json.*'))
 								)
 							)

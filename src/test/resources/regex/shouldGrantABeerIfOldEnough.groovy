@@ -1,10 +1,14 @@
+package regex
+
 org.springframework.cloud.contract.spec.Contract.make {
 			request {
 				method 'POST'
 				url '/check'
 				body(
-					name: 'josh',
-					age: 22
+					[
+					name:value(consumer(regex('[a-zA-Z]+'))),
+					age: value(consumer(regex('[3-9][0-9]|2[2-9]')))
+					]
 				)
 				headers {
 						header 'Content-Type', 'application/json'
