@@ -11,7 +11,7 @@ public class ServerController {
 	@RequestMapping(value = "/check", method=RequestMethod.POST, 
 			consumes="application/json", produces="application/json")
 	public Response check(@RequestBody PersonToCheck personToCheck) {
-		if (personToCheck.age >= 22) {
+		if (personToCheck.age >= 20) {
 			return new Response(BeerCheckStatus.OK);
 		}
 		return new Response(BeerCheckStatus.NOT_OK);
@@ -20,7 +20,6 @@ public class ServerController {
 }
 
 class PersonToCheck {
-	public String name;
 	public int age;
 }
 
