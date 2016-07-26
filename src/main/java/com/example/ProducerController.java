@@ -6,15 +6,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ServerController {
+public class ProducerController {
 
-	@RequestMapping(value = "/check", method=RequestMethod.POST, 
-			consumes="application/json", produces="application/json")
+	@RequestMapping(value = "/check",
+			method=RequestMethod.POST,
+			consumes="application/json",
+			produces="application/json")
 	public Response check(@RequestBody PersonToCheck personToCheck) {
-		if (personToCheck.age >= 20) {
-			return new Response(BeerCheckStatus.OK);
-		}
-		return new Response(BeerCheckStatus.NOT_OK);
+		return null;
 	}
 	
 }
