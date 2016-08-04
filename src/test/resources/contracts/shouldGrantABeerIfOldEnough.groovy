@@ -2,19 +2,21 @@ package contracts
 
 org.springframework.cloud.contract.spec.Contract.make {
 	request {
-		method ''
-		url ''
+		method 'POST'
+		url '/check'
 		body(
-			[:]
+			[
+					age: value(consumer(regex('[2-9][0-9]')))
+			]
 		)
 		headers {
-
+			header('Content-Type', 'application/json')
 		}
 	}
 	response {
 		status 200
-		body( """
-
+		body("""
+				{ "status":"OK" }
 			""")
 		headers {
 			header(
