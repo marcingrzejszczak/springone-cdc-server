@@ -13,10 +13,7 @@ public class ProducerController {
 			consumes="application/json",
 			produces="application/json")
 	public Response check(@RequestBody PersonToCheck personToCheck) {
-		if (personToCheck.age >= 20) {
-			return new Response(BeerCheckStatus.OK);
-		}
-		return new Response(BeerCheckStatus.NOT_OK);
+		return null;
 	}
 	
 }
